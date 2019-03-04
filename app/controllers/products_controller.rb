@@ -10,7 +10,7 @@ class ProductsController < ApplicationController
   end
 
   def description
-
+    render plain: !!Product.find(params[:id]).description
   end
 
   private
