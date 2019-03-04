@@ -9,6 +9,7 @@
       let inv = $.get('/product/'+id+'/inventory', function(inventory){
         return inventory
       })
+      $(`#product-${id}`)
     })
   })
 </script>
