@@ -10,7 +10,7 @@
       let inv = $.get('/product/'+id+'/inventory', function(inventory){
         return inventory
       })
-      $(`#product-${id}`).innerText = `description: ${description}, inventory: ${inventory}`
+      $(`#product-${id}`).innerText = `description: ${des}, inventory: ${inv}`
     })
   })
 </script>
