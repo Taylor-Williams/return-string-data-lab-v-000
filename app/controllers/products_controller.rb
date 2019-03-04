@@ -14,7 +14,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-
+    @prodcuts = Product.all
   end
 
   private
