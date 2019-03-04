@@ -2,12 +2,13 @@
 <script type="text/javascript">
   $(function(){
     $(".js-more").on('click', function(){
-      debugger
       let id = $(this).data("id")
       let des = $.get('/product/'+id+'/description', function(description){
+        debugger
         return description
       })
       let inv = $.get('/product/'+id+'/inventory', function(inventory){
+        debugger
         return inventory
       })
       $(`#product-${id}`)[0].innerText = `description: ${des}, inventory: ${inv}`
