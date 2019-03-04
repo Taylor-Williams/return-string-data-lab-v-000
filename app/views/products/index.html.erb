@@ -3,15 +3,16 @@
   $(function(){
     $(".js-more").on('click', function(){
       let id = $(this).data("id")
-      let des = $.get('/product/'+id+'/description', function(description){
-        console.log(description)
-        return description
+      $.get("/products/" + id + "/description", function(description) {
+        $.get("/products/" + id + "/inventory", function(inventory) {
+          var inventoryText = "<strong>Available</strong>"
+          if(inventory === "false"){
+            inventoryText = "<strong>Sold Out</strong>"
+          }
+          var descriptionText = "<p>" + description + "</p><p>" + inventoryText + "</p>"
+          $("#product-" + id).html(descriptionText)
+        })
       })
-      let inv = $.get('/product/'+id+'/inventory', function(inventory){
-        console.log(inventory)
-        return inventory
-      })
-      $(`#product-${id}`)[0].innerText = `description: ${des}, inventory: ${inv}`
     })
   })
 </script>
