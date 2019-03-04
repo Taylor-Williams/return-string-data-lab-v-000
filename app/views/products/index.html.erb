@@ -3,7 +3,7 @@
   $(function(){
     $(".js-more").on('click', function(){
       debugger
-      let id = $(this).dataset.id
+      let id = $(this).data("id")
       let des = $.get('/product/'+id+'/description', function(description){
         return description
       })
