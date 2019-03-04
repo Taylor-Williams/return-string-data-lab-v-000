@@ -13,6 +13,10 @@ class ProductsController < ApplicationController
     render plain: Product.find(params[:id]).description
   end
 
+  def index
+
+  end
+
   private
 
     def product_params
