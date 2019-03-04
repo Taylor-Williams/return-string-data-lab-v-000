@@ -1,1 +1,14 @@
 <%= render @products %>
+<script type="text/javascript">
+  $(function(){
+    $(".js-more").on('click', function(){
+      let id = $(this).dataset.id
+      let des = $.get('/product/'+id+'/description', function(description){
+        return description
+      })
+      let inv = $.get('/product/'+id+'/inventory', function(inventory){
+        return inventory
+      })
+    })
+  })
+</script>
