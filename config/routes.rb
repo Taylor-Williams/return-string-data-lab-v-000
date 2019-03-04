@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :orders
   resources :invoices
   resources :products, only: [:create]
+  get '/product/:id/inventory', to: 'products#inventory'
+  get '/product/:id/description', to: 'products#description'
 end
